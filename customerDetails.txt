@@ -1,0 +1,2 @@
+8bfd7883,best hotel,29 jln pengasah 4  klang  41400  selangor malaysia,boon,air con,2024-02-22,water dropping,500,completed,paid,best service
+7423713e,second best hotel,no 10  jalan permas 9/15  bandar baru permas jaya  81750  johor bahru  johor  malaysia,boon,asdfasdf,1211-11-11,	qw	qwdadadsasdadqweqw	adsdsa,1212,in progress,not paid,null
