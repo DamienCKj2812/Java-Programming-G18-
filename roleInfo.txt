@@ -1,5 +1,0 @@
-boon,123,technician(b)
-ckj,123,centre manager
-yao,123,technician
-root,123,centre manager
-ali,123,centre manager
