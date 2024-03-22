@@ -855,15 +855,15 @@ public class CentreManagerUI implements ActionListener{
     public void editCustomerDetailUI() {
         // Create and configure the frame
         frame = new JFrame("Appoinment Management");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1200, 600); // Increased width to accommodate the table
-        frame.setLayout(null); // Use null layout for manual positioning
+        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        frame.setSize(1200, 600); 
+        frame.setLayout(null); 
 
         // container for the labels
         JPanel infoPanel = new JPanel();
-        infoPanel.setBounds(1020, 20, 150, 85); // x, y, width, height values
-        infoPanel.setBackground(Color.decode("#E0E0E0")); // Set background color to grey
-        infoPanel.setLayout(null); // Use null layout for manual positioning
+        infoPanel.setBounds(1020, 20, 150, 85); 
+        infoPanel.setBackground(Color.decode("#E0E0E0")); 
+        infoPanel.setLayout(null); 
 
         // UI components (labels)
         usernameLabel = new JLabel(username);
@@ -882,9 +882,9 @@ public class CentreManagerUI implements ActionListener{
 
         // Create a panel to act as the container for the buttons
         JPanel buttonPanel = new JPanel();
-        buttonPanel.setBounds(10, 20, 840, 85); // Set bounds for the panel
+        buttonPanel.setBounds(10, 20, 840, 85); 
         buttonPanel.setBackground(Color.decode("#E0E0E0"));
-        buttonPanel.setLayout(null); // Use null layout for manual positioning
+        buttonPanel.setLayout(null); 
 
         // UI components (buttons and logout button)
         backToMainPageButton = new JButton("<html>Back To<br>Main Page</html>");
@@ -927,7 +927,7 @@ public class CentreManagerUI implements ActionListener{
         buttonPanel.add(reportButton);
         buttonPanel.add(backToMainPageButton);
         buttonPanel.add(manageTechinicianButton);
-        buttonPanel.add(logOutButton); // Moved logout button to button panel
+        buttonPanel.add(logOutButton);
 
         // Add buttonPanel to the frame
         frame.add(buttonPanel);
@@ -982,11 +982,9 @@ public class CentreManagerUI implements ActionListener{
                     appointment.get("feedback")
             });
         }
-
-        // Create the table with the model
         JTable appointmentTable = new JTable(model);
 
-        // Add a mouse listener to detect double-click events
+        
         appointmentTable.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -1032,7 +1030,7 @@ public class CentreManagerUI implements ActionListener{
 
                         if (confirmOption == JOptionPane.YES_OPTION) {
                             // Call the deleteCustomerDataWithPassword method with the orderId
-                            centreManager.deleteCustomerDataWithPassword(orderId, "yes");
+                            centreManager.deleteCustomerData(orderId, "yes");
                             // Remove the row from the table model
                             model.removeRow(row);
                             JOptionPane.showMessageDialog(null, "Order ID: " + orderId + " deleted successfully");
@@ -1123,7 +1121,6 @@ public class CentreManagerUI implements ActionListener{
             String selectedUsername = (String) dropdown.getSelectedItem();
             String message = roleAuth.banUser(selectedUsername);
             JOptionPane.showMessageDialog(frame, message);
-            // You can update button properties or any other UI updates here if needed
         }
     });
 
@@ -1133,7 +1130,6 @@ public class CentreManagerUI implements ActionListener{
             String selectedUsername = (String) dropdown.getSelectedItem();
             String message = roleAuth.unbanUser(selectedUsername);
             JOptionPane.showMessageDialog(frame, message);
-            // You can update button properties or any other UI updates here if needed
         }
     });
 

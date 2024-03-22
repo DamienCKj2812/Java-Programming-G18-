@@ -285,7 +285,7 @@ public void loadCustomerDataFromFile(String filePath) {
     }
     
 
-public void deleteCustomerDataWithPassword(String orderID, String confirmation) {
+public void deleteCustomerData(String orderID, String confirmation) {
     orderID = orderID.toLowerCase();
 
     if (!customerDetails.containsKey(orderID)) {
